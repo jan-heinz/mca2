@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         rigidBody = GetComponent<Rigidbody>();
+        originalSpeed = speed;
     }
 
     // Update is called once per frame
@@ -24,15 +25,15 @@ public class PlayerController : MonoBehaviour {
             rigidBody.AddForce(0, jumpForce, 0, ForceMode.Impulse);
         }
 
+        // user presses shift, double speed
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
-            doubledSpeed = speed * 2;
+            speed *= 2;
         }
 
+        // user unpresses shift, revert to original speed
         if (Input.GetKeyUp(KeyCode.LeftShift)) {
-            speed = speed;
+            speed = originalSpeed;
         }
-        
-        Debug.Log("Speed: " + speed);
     }
 
     void FixedUpdate() {
