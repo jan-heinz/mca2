@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 305975664195628906}
   - component: {fileID: 8680248107950839809}
   - component: {fileID: 5935271084853675017}
+  - component: {fileID: 4838198267276125451}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c623e85452d664adc9c763e78a48594c, type: 2}
+  - {fileID: 2100000, guid: c45b003771be722498854b1b83030b02, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -121,3 +122,24 @@ MonoBehaviour:
   player: {fileID: 0}
   moveSpeed: 3.5
   enemyDestroyedSFX: {fileID: 8300000, guid: eec961d9965b09c468aa1b0cdaa1bce5, type: 3}
+--- !u!95 &4838198267276125451
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8825098532919472828}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 86b5f09f874794ec39bbaf744f24d261, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

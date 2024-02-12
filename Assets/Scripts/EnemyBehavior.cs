@@ -12,7 +12,9 @@ public class EnemyBehavior : MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (player == null) {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
     }
 
     // Update is called once per frame
@@ -26,7 +28,8 @@ public class EnemyBehavior : MonoBehaviour {
     void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("Enemy")) {
             AudioSource.PlayClipAtPoint(enemyDestroyedSFX, Camera.main.transform.position);
-            Destroy(gameObject);
+            gameObject.GetComponent<Animator>().SetTrigger("enemyDestroyed");
+            Destroy(gameObject, 1);
         }
     }
 }
