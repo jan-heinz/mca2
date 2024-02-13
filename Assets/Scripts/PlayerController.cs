@@ -37,10 +37,16 @@ public class PlayerController : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        if (!LevelManager.isGameOver) {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 forceVector = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        rigidBody.AddForce(forceVector * speed);
+            Vector3 forceVector = new Vector3(moveHorizontal, 0.0f, moveVertical);
+            rigidBody.AddForce(forceVector * speed);
+        }
+        else {
+            rigidBody.velocity = Vector3.zero;
+            rigidBody.angularVelocity = Vector3.zero;
+        }
     }
 }
